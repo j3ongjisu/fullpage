@@ -4,10 +4,12 @@ $(function () {
         anchors: ['main', 'sub01', 'sub02'],
         navigation: false,
         css3: false,
+        //반응형에서 fullpage 안하기.
         responsiveWidth: 700,
-        responsiveHeight: 1200,
+        //넘치는 부분 스크롤 하기.
+        scrollOverflow: true,
         afterRender: function () {
-            alert('full is nothing !!!').eq(0).addClass('on');
+            $('.Main__content .section').eq(0).addClass('on');
         },
         afterLoad: function (lnk, idx) {
             console.log(lnk, idx);
@@ -23,8 +25,8 @@ $(function () {
             } else {
                 $('.header').removeClass('on')
             }
+
         }
     });
-
 
 })
